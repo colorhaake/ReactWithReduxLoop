@@ -1,10 +1,9 @@
-const buttons = (state = [], action) => {
-  switch (action.type) {
-    case 'CLICK_BUTTON':
-      return {...state, response: 'abcdefg'}
-    default:
-      return state
-  }
-}
+import { loop, Effects } from 'redux-loop'
+import { callApiSuccess } from '../actions'
 
-export default buttons
+export const handleClickButton = (state = [], action) => {
+  return loop(
+    {...state, response: 'abcdefg'},
+    Effects.constant(callApiSuccess('cdefg'))
+  )
+}
