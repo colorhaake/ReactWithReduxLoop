@@ -1,13 +1,13 @@
 import { connect } from 'react-redux'
 import IntroContent from './IntroContent'
 import { onClickButton } from '../actions'
+import { createResponseSelector } from '../selectors'
 import './style/index.css';
 
-const mapStateToProps = (state) => {
-  // TODO: use reselect library to reduce duplicated state updated
-  // https://github.com/reactjs/reselect
+const mapStateToProps = (state, props) => {
+  const getReponse = createResponseSelector()
   return {
-    response: state && state.response
+    response: getReponse(state, props)
   }
 }
 

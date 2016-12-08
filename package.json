@@ -9,7 +9,8 @@
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-redux": "^4.4.6",
-    "redux-loop": "^2.2.2"
+    "redux-loop": "^2.2.2",
+    "reselect": "^2.5.4"
   },
   "scripts": {
     "start": "react-scripts start",
